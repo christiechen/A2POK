@@ -208,7 +208,7 @@ Main.prototype.init = function(){
                     console.log("purchases:");
                     console.log(purchases);
 
-                    let k = new KronosMap('kronos-map');
+                    let k = new KronosMap('kronos-map', gpsMapStationary);
                     let p = new PurchsingBarGraph('bar-graph-purchases');
 
                 });
