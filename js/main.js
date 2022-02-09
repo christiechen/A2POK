@@ -7,6 +7,7 @@ function Main(){
 }
 
 Main.prototype.init = function(){
+
     //data wrangling
     var self = this;
     d3.csv("data/gps.csv")
@@ -209,6 +210,7 @@ Main.prototype.init = function(){
                     console.log(purchases);
 
                     let k = new KronosMap('kronos-map', gpsMapStationary);
+                    let a = new AbilaMap('abila-map', gpsMapStationary);
                     let p = new PurchsingBarGraph('bar-graph-purchases');
 
                 });
@@ -232,6 +234,7 @@ Main.prototype.gpsEquality = function(currentEntry, checkEntry){
     && Math.abs(checkEntry.long - currentEntry.long) < 0.005;
 
 }
+
 
 let m = new Main();
 

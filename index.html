@@ -26,10 +26,17 @@
 	<section>
 		<h2> Kronos map </h2>
 		<button id = "mapSwitch">Switch Maps</button>
-		<div>
-			<svg id="kronos-map">
+		<div class='switchable'>
+			<div class='map-svg'>
+				<svg id="kronos-map">
 
-			</svg>
+				</svg>
+			</div>
+			<div class='map-svg no-show'>
+				<svg id="abila-map">
+
+				</svg>
+			</div>
 		</div>
 		<!-- <div id='play-map-svg'> -->
 			<!-- optional map here (the play button) -->
@@ -54,12 +61,18 @@
 	<script src="js/topojson.min.js"></script>
 
 	<!-- *** ADD JS CODE TO THE FOLLOWING FILE: *** -->
+	<!-- JS for non-visualization elements -->
+	<script src="js/script.js"></script> 
 
 
 	<script src="js/kronosMap.js"></script>
+	<script src="js/abilaMap.js"></script>
 	<script src="js/purchasingBarGraph.js"></script>
 	<script src="js/purchasingSearch.js"></script>
 	<script src="js/main.js"></script>
+	
+	
+	
 </body>
 
 </html>
