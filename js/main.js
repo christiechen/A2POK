@@ -211,7 +211,7 @@ Main.prototype.init = function(){
 
                     let k = new KronosMap('kronos-map', gpsMapStationary);
                     let a = new AbilaMap('abila-map', gpsMapStationary);
-                    let p = new PurchsingBarGraph('bar-graph-purchases');
+                    let p = new PurchasingBarGraph('bar-graph-purchases');
 
                     
                 });
