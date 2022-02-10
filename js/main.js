@@ -173,9 +173,15 @@ Main.prototype.init = function(){
 
                         //fix datatypes
                         currentPurchase.price = +currentPurchase.price;
-                        let time = currentPurchase.timestamp.split("/")
-                        currentPurchase.timestamp = new Date(+time[2], +time[0]-1, +time[1]);
+                        let time = currentPurchase.timestamp.split(" ");
+                        let date = time[0].split("/");
+                        time = time[1];
+                        time = time.split(":");
+                        
+                        currentPurchase.timestamp = new Date(+date[2], +date[0]-1, +date[1], +time[0], +time[1]);
+                        
                         purchases.push(currentPurchase);
+                        
                     }
 
                     // console.log(purchases);
