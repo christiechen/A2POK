@@ -213,6 +213,7 @@ Main.prototype.init = function(){
                     let a = new AbilaMap('abila-map', gpsMapStationary);
                     let p = new PurchsingBarGraph('bar-graph-purchases');
 
+                    
                 });
 
 

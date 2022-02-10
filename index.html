@@ -24,22 +24,29 @@
 	</h1>
 
 	<section>
-		<h2> Kronos map </h2>
-		<button id = "mapSwitch">Switch Maps</button>
-		<div class='switchable'>
-			<div class='map-svg'>
+		<h2 id="mapTitle">Kronos Map</h2>
+		<button id="mapSwitch">Switch Maps</button>
+
+		<label>Select Time Range
+			<input type="datetime-local" id="startDate" name="startDate" min="2014-01-06T06:25" max="2014-01-19T20:45">
+			<input type="datetime-local" id="endDate" name="endDate" min="2014-01-06T06:45" max="2014-01-19T21:00">
+			<button id="playButton">Play Visualization</button>
+		</label>
+
+		<div class="switchable">
+			<div class="map-svg">
 				<svg id="kronos-map">
 
 				</svg>
 			</div>
-			<div class='map-svg no-show'>
+			<div class="map-svg no-show">
 				<svg id="abila-map">
 
 				</svg>
 			</div>
 		</div>
 		<!-- <div id='play-map-svg'> -->
-			<!-- optional map here (the play button) -->
+		<!-- optional map here (the play button) -->
 		<!-- </div> -->
 	</section>
 	<section>
@@ -54,7 +61,7 @@
 
 
 
-	<script src = "js/jquery.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 
 	<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
 	<script src="js/d3.min.js"></script>
@@ -62,7 +69,7 @@
 
 	<!-- *** ADD JS CODE TO THE FOLLOWING FILE: *** -->
 	<!-- JS for non-visualization elements -->
-	<script src="js/script.js"></script> 
+	<script src="js/script.js"></script>
 
 
 	<script src="js/kronosMap.js"></script>
@@ -70,9 +77,9 @@
 	<script src="js/purchasingBarGraph.js"></script>
 	<script src="js/purchasingSearch.js"></script>
 	<script src="js/main.js"></script>
-	
-	
-	
+
+
+
 </body>
 
 </html>
