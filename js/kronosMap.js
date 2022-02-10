@@ -72,7 +72,6 @@ KronosMap.prototype.changeTime = function (dates) {
     self.svg.selectAll('circle').remove();
     var startDate = dates[0];
     var endDate = dates[1];
-    console.log(dates[1])
     // should times be an array of the range of Dates...?
     var currData = new Map(self.gpsData);
     for(var [key, valArr] of currData.entries()){
@@ -92,10 +91,7 @@ KronosMap.prototype.changeTime = function (dates) {
     
     }
     self.svg.selectAll('circle').exit();
-    console.log(currData);
-
-
-    console.log(self.gpsData)
+  
 
 
 
