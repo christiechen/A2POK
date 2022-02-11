@@ -17,19 +17,13 @@ AbilaMap.prototype.init = function () {
     self.svgWidth = $(self.svgID).width();
     self.svgHeight = $(self.svgID).height();
 
-
-    // .center([0, 30])
-    // .translate([self.svgWidth / 2 - self.margin.left, self.svgHeight / 2]);;
-
     var promises = []
     promises.push(d3.json("../data/Geospatial/Abila.json"))
-    // promises.push(d3.json("../data/Geospatial/Abila.json"))
     myDataPromises = Promise.all(promises).then(function (my_data) {
 
 
         self.topo = my_data[0]
         var projection = d3.geoMercator().translate([self.svgWidth / 2, self.svgHeight / 2]).fitSize([self.svgWidth, self.svgHeight], self.topo)
-        // .fitExtent([0, 0], [self.svgWidth, self.svgHeight], topo);
         var g = self.svg.append("g").attr("width", self.svgWidth)
             .attr("height", self.svgHeight);
 
@@ -68,7 +62,6 @@ AbilaMap.prototype.changeTime = function (dates) {
     var startDate = dates[0];
     var endDate = dates[1];
     var gpsArr = [];
-    // should times be an array of the range of Dates...?
     var currData = new Map(self.gpsData);
     for (var [key, valArr] of currData.entries()) {
         valArr.filter(function (d) {
@@ -88,6 +81,8 @@ AbilaMap.prototype.changeTime = function (dates) {
         .attr('cx', function (d) { return projection([d.long, d.lat])[0] })
         .attr('cy', function (d) { return projection([d.long, d.lat])[1] })
         .attr('r', 4).attr('fill', 'red')
+        .attr('stroke', 'black')
+        .attr('stroke-width', .5)
         .on("mouseover", function (event, d) {
             div.transition()
                 .duration(200)
