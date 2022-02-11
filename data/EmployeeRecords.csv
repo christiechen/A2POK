@@ -1,0 +1,55 @@
+﻿LastName,FirstName,BirthDate,BirthCountry,Gender,CitizenshipCountry,CitizenshipBasis,CitizenshipStartDate,PassportCountry,PassportIssueDate,PassportExpirationDate,CurrentEmploymentType,CurrentEmploymentTitle,CurrentEmploymentStartDate,EmailAddress,MilitaryServiceBranch,MilitaryDischargeType,MilitaryDischargeDate
+Bramar,Mat,12/19/81,Tethys,Male,Tethys,BirthNation,12/19/81,Tethys,12/12/07,12/11/17,Administration,Assistant to CEO,7/1/05,Mat.Bramar@gastech.com.kronos,,,
+Ribera,Anda,11/17/75,Tethys,Female,Tethys,BirthNation,11/17/75,Tethys,6/15/09,6/14/19,Administration,Assistant to CFO,10/30/09,Anda.Ribera@gastech.com.kronos,,,
+Pantanal,Rachel,8/22/84,Tethys,Female,Tethys,BirthNation,8/22/84,Tethys,6/13/13,6/12/23,Administration,Assistant to CIO,10/1/13,Rachel.Pantanal@gastech.com.kronos,,,
+Lagos,Linda,1/26/80,Tethys,Female,Tethys,BirthNation,1/26/80,Tethys,11/1/09,10/31/19,Administration,Assistant to COO,2/1/10,Linda.Lagos@gastech.com.kronos,,,
+Mies Haber,Ruscella,4/26/64,Kronos,Female,Kronos,BirthNation,4/26/64,,,,Administration,Assistant to Engineering Group Manager,4/2/03,Ruscella.Mies.Haber@gastech.com.kronos,ArmedForcesOfKronos,HonorableDischarge,10/1/84
+Forluniau,Carla,6/2/81,Kronos,Female,Kronos,BirthNation,6/2/81,,,,Administration,Assistant to IT Group Manager,3/7/05,Carla.Forluniau@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/01
+Lais,Cornelia,7/7/91,Kronos,Female,Kronos,BirthNation,7/7/91,,,,Administration,Assistant to Security Group Manager,12/22/11,Cornelia.Lais@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/11
+Onda,Marin,12/31/69,Tethys,Male,Tethys,BirthNation,12/31/69,Tethys,4/15/05,4/14/15,Engineering,Drill Site Manager,4/13/03,Marin.Onda@gastech.com.kronos,,,
+Borrasca,Isande,10/22/79,Tethys,Female,Tethys,BirthNation,10/22/79,Tethys,10/3/08,10/2/18,Engineering,Drill Technician,2/18/04,Isande.Borrasca@gastech.com.kronos,,,
+Calzas,Axel,9/13/75,Tethys,Male,Tethys,BirthNation,9/13/75,Tethys,1/31/12,1/30/22,Engineering,Drill Technician,7/17/97,Axel.Calzas@gastech.com.kronos,,,
+Orilla,Kare,2/29/64,Tethys,Female,Tethys,BirthNation,2/29/64,Tethys,7/1/13,6/30/23,Engineering,Drill Technician,11/12/05,Kare.Orilla@gastech.com.kronos,,,
+Orilla,Elsa,4/12/82,Tethys,Female,Tethys,BirthNation,4/12/82,Tethys,2/28/10,2/27/20,Engineering,Drill Technician,5/26/04,Elsa.Orilla@gastech.com.kronos,,,
+Tempestad,Brand,5/14/79,Tethys,Male,Tethys,BirthNation,5/14/79,Tethys,5/5/12,5/4/22,Engineering,Drill Technician,6/12/04,Brand.Tempestad@gastech.com.kronos,,,
+Azada,Lars,4/30/73,Tethys,Male,Tethys,BirthNation,4/30/73,Tethys,6/1/11,5/31/21,Engineering,Engineer,12/1/95,Lars.Azada@gastech.com.kronos,TethanDefenseForceAir,GeneralDischarge,10/1/95
+Balas,Felix,3/4/60,Tethys,Male,Tethys,BirthNation,3/4/60,Tethys,4/15/05,4/14/15,Engineering,Engineer,9/2/04,Felix.Balas@gastech.com.kronos,TethanDefenseForceNavy,HonorableDischarge,10/1/88
+Dedos,Lidelse,2/14/52,Tethys,Female,Tethys,BirthNation,2/14/52,Tethys,8/13/08,8/12/18,Engineering,Engineering Group Manager,3/1/03,Lidelse.Dedos@gastech.com.kronos,,,
+Frente,Birgitta,7/31/76,Tethys,Female,Tethys,BirthNation,7/31/76,Tethys,3/17/06,3/16/16,Engineering,Geologist,5/3/99,Birgitta.Frente@gastech.com.kronos,,,
+Nubarron,Adra,6/6/68,Tethys,Female,Tethys,BirthNation,6/6/68,Tethys,11/12/07,11/11/17,Engineering,Geologist,7/8/94,Adra.Nubarron@gastech.com.kronos,,,
+Cazar,Gustav,11/6/86,Tethys,Male,Tethys,BirthNation,11/6/86,Tethys,6/10/09,6/9/19,Engineering,Hydraulic Technician,9/15/09,Gustav.Cazar@gastech.com.kronos,,,
+Frente,Vira,12/29/77,Tethys,Female,Tethys,BirthNation,12/29/77,Tethys,2/20/10,2/19/20,Engineering,Hydraulic Technician,12/1/01,Vira.Frente@gastech.com.kronos,,,
+Vasco-Pais,Willem,3/18/75,Tethys,Male,Tethys,BirthNation,3/18/75,Tethys,11/26/11,11/25/21,Executive,Environmental Safety Advisor,6/5/10,Willem.Vasco-Pais@gastech.com.kronos,,,
+Sanjorge Jr.,Sten,8/29/48,Tethys,Male,Tethys,BirthNation,8/29/48,Tethys,4/21/13,4/20/23,Executive,President/CEO,11/9/90,Sten.Sanjorge Jr.@gastech.com.kronos,,,
+Barranco,Ingrid,10/26/61,Tethys,Female,Tethys,BirthNation,10/26/61,Tethys,7/1/13,6/30/23,Executive,SVP/CFO,9/30/03,Ingrid.Barranco@gastech.com.kronos,,,
+Campo-Corrente,Ada,11/26/51,Tethys,Female,Tethys,BirthNation,11/26/51,Tethys,7/14/13,7/13/23,Executive,SVP/CIO,10/5/04,Ada.Campo-Corrente@gastech.com.kronos,,,
+Strum,Orhan,10/18/63,Asteria,Male,Tethys,ParentCitizenship,10/18/63,Tethys,6/2/11,6/1/21,Executive,SVP/COO,8/7/03,Orhan.Strum@gastech.com.kronos,,,
+Ovan,Bertrand,12/12/64,Tethys,Male,Tethys,BirthNation,12/12/64,Tethys,10/3/08,10/2/18,Facilities,Facilities Group Manager,10/1/98,Bertrand.Ovan@gastech.com.kronos,TethanDefenseForceAir,HonorableDischarge,10/1/93
+Arpa,Emile,10/1/92,Kronos,Male,Kronos,BirthNation,10/1/92,,,,Facilities,Janitor,3/18/13,Emile.Arpa@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/12
+Awelon,Varro,5/5/86,Kronos,Male,Kronos,BirthNation,5/5/86,,,,Facilities,Janitor,10/22/12,Varro.Awelon@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/06
+Coginian,Dante,12/1/71,Kronos,Male,Kronos,BirthNation,12/1/71,,,,Facilities,Lead Janitor,1/7/95,Dante.Coginian@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/92
+Hafon,Albina,6/14/87,Kronos,Female,Kronos,BirthNation,6/14/87,,,,Facilities,Truck Driver,9/12/09,Albina.Hafon@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/07
+Hawelon,Benito,11/23/78,Kronos,Male,Kronos,BirthNation,11/23/78,,,,Facilities,Truck Driver,2/21/00,Benito.Hawelon@gastech.com.kronos,ArmedForcesOfKronos,HonorableDischarge,10/1/99
+Hawelon,Claudio,8/13/83,Kronos,Male,Kronos,BirthNation,8/13/83,,,,Facilities,Truck Driver,3/13/07,Claudio.Hawelon@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/03
+Mies,Henk,9/23/84,Kronos,Male,Kronos,BirthNation,9/23/84,,,,Facilities,Truck Driver,7/12/13,Henk.Mies@gastech.com.kronos,ArmedForcesOfKronos,HonorableDischarge,10/1/04
+Morlun,Valeria,9/22/81,Kronos,Female,Kronos,BirthNation,9/22/81,,,,Facilities,Truck Driver,12/2/03,Valeria.Morlun@gastech.com.kronos,ArmedForcesOfKronos,HonorableDischarge,10/1/01
+Morlun,Adan,10/9/84,Kronos,Male,Kronos,BirthNation,10/9/84,,,,Facilities,Truck Driver,1/14/06,Adan.Morlun@gastech.com.kronos,ArmedForcesOfKronos,HonorableDischarge,10/1/05
+Morluniau,Cecilia,9/2/88,Kronos,Female,Kronos,BirthNation,9/2/88,,,,Facilities,Truck Driver,4/30/09,Cecilia.Morluniau@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/08
+Nant,Irene,3/13/85,Kronos,Female,Kronos,BirthNation,3/13/85,,,,Facilities,Truck Driver,11/30/08,Irene.Nant@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/05
+Scozzese,Dylan,5/25/86,Kronos,Male,Kronos,BirthNation,5/25/86,,,,Facilities,Truck Driver,3/1/07,Dylan.Scozzese@gastech.com.kronos,ArmedForcesOfKronos,HonorableDischarge,10/1/06
+Bergen,Linnea,7/10/69,Tethys,Female,Tethys,BirthNation,7/10/69,Tethys,4/29/04,4/28/14,Information Technology,IT Group Manager,7/4/04,Linnea.Bergen@gastech.com.kronos,,,
+Alcazar,Lucas,4/17/90,Tethys,Male,Tethys,BirthNation,4/17/90,Tethys,1/24/13,1/23/23,Information Technology,IT Helpdesk,11/30/10,Lucas.Alcazar@gastech.com.kronos,,,
+Baza,Isak,2/12/79,Tethys,Male,Tethys,BirthNation,2/12/79,Tethys,8/13/08,8/12/18,Information Technology,IT Technician,3/20/02,Isak.Baza@gastech.com.kronos,,,
+Calixto,Nils,3/26/82,Tethys,Male,Tethys,BirthNation,3/26/82,Tethys,6/12/12,6/11/22,Information Technology,IT Technician,10/19/04,Nils.Calixto@gastech.com.kronos,,,
+Flecha,Sven,11/11/86,Tethys,Male,Tethys,BirthNation,11/11/86,Tethys,10/9/06,10/8/16,Information Technology,IT Technician,10/15/10,Sven.Flecha@gastech.com.kronos,,,
+Herrero,Kanon,10/3/84,Tethys,Male,Tethys,BirthNation,10/3/84,Tethys,10/10/08,10/9/18,Security,Badging Office,11/20/08,Kanon.Herrero@gastech.com.kronos,,,
+Lagos,Varja,5/1/76,Tethys,Female,Tethys,BirthNation,5/1/76,Tethys,7/7/13,7/6/23,Security,Badging Office,10/1/06,Varja.Lagos@gastech.com.kronos,,,
+Fusil,Stenig,4/29/63,Tethys,Male,Tethys,BirthNation,4/29/63,Tethys,4/3/06,4/2/16,Security,Building Control,2/5/04,Stenig.Fusil@gastech.com.kronos,TethanDefenseForceArmy,HonorableDischarge,10/1/87
+Mies,Minke,11/19/92,Kronos,Male,Kronos,BirthNation,11/19/92,,,,Security,Perimeter Control,5/22/13,Minke.Mies@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/11
+Osvaldo,Hennie,5/31/88,Kronos,Male,Kronos,BirthNation,5/31/88,,,,Security,Perimeter Control,6/7/11,Hennie.Osvaldo@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/10
+Vann,Isia,12/13/86,Kronos,Male,Kronos,BirthNation,12/13/86,,,,Security,Perimeter Control,12/14/07,Isia.Vann@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/07
+Vann,Edvard,3/18/91,Kronos,Male,Kronos,BirthNation,3/18/91,,,,Security,Perimeter Control,8/15/13,Edvard.Vann@gastech.com.kronos,ArmedForcesOfKronos,HonorableDischarge,10/1/11
+Resumir,Felix,6/30/59,Tethys,Male,Tethys,BirthNation,6/30/59,Tethys,3/20/05,3/19/15,Security,Security Group Manager,9/15/03,Felix.Resumir@gastech.com.kronos,TethanDefenseForceArmy,HonorableDischarge,10/1/97
+Bodrogi,Loreto,4/17/89,Kronos,Male,Kronos,BirthNation,4/17/89,,,,Security,Site Control,8/17/13,Loreto.Bodrogi@gastech.com.kronos,ArmedForcesOfKronos,HonorableDischarge,10/1/08
+Cocinaro,Hideki,12/25/80,Tethys,Male,Tethys,BirthNation,12/25/80,Tethys,5/25/13,5/24/23,Security,Site Control,1/1/10,Hideki.Cocinaro@gastech.com.kronos,TethanDefenseForceArmy,HonorableDischarge,10/1/09
+Ferro,Inga,6/17/89,Kronos,Female,Kronos,BirthNation,6/17/89,,,,Security,Site Control,1/11/13,Inga.Ferro@gastech.com.kronos,ArmedForcesOfKronos,GeneralDischarge,10/1/12
