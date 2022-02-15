@@ -3,7 +3,7 @@ function PurchasingBarGraph(id,data){
     
     self.svgID = '#'+id;
     self.data = data;
-
+    self.scatterChart = new ScatterChart();
     self.init();
     
 }
@@ -115,12 +115,20 @@ PurchasingBarGraph.prototype.update = function(){
         .join("g")
         .attr("transform", d => `translate(${x(d.location)+self.margin.left}, 0)`)
         .selectAll("rect")
-        .data(function(d) { return subgroups.map(function(key) { return {key: key, value: d[key]}; }); })
+        .data(function(d) { return subgroups.map(function(key) { return {key: key, value: d[key], location: d.location}; }); })
         .join("rect")
         .attr("x", d => xSubgroup(d.key))
         .attr("y", d => y(d.value))
         .attr("width", xSubgroup.bandwidth())
         .attr("height", d => self.svgHeight - y(d.value))
         .attr("fill", d => color(d.key))
-        .on("mouseover", d => console.log(d));
+        .on("mouseover",function(d){
+            d3.select(this).classed("highlighted", true);
+        })
+        .on("mouseout",function(d){
+            self.svg.selectAll("rect").classed("highlighted", false);
+        })
+        .on("click", function(d,i){
+            self.scatterChart.update(i);
+        });
 }

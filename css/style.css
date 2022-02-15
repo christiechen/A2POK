@@ -67,3 +67,8 @@ span.time, span.date, span.type, span.price{
     padding-left:10px;
     margin-top: 20px;
 }
+
+.highlighted{
+    stroke: #404040;
+    stroke-width:4;
+}
