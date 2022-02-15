@@ -1,46 +1,9 @@
-let dummy = [
-    {
-        FirstName: "RandomFirst1",
-        LastName: "RandomSecond1",
-        location: "RandomLocation1",
-        price: 3.29,
-        type: "loyalty"
-    },
-    {
-        FirstName: "RandomFirst2",
-        LastName: "RandomSecond2",
-        location: "RandomLocation2",
-        price: 4.13,
-        type: "loyalty"
-    },
-    {
-        FirstName: "RandomFirst3",
-        LastName: "RandomSecond3",
-        location: "RandomLocation3",
-        price: 1.53,
-        type: "loyalty"
-    },
-    {
-        FirstName: "RandomFirst4",
-        LastName: "RandomSecond4",
-        location: "RandomLocation2",
-        price: 1.25,
-        type: "cc"
-    },
-    {
-        FirstName: "RandomFirst5",
-        LastName: "RandomSecond5",
-        location: "RandomLocation1",
-        price: 50.12,
-        type: "cc"
-    }
-]
-
-function PurchasingBarGraph(id){
+function PurchasingBarGraph(id,data){
     var self = this;
 
     self.svg = d3.select(`#${id}`)
     self.svgID = '#'+id;
+    self.data = data;
 
     self.init();
     
@@ -51,20 +14,111 @@ PurchasingBarGraph.prototype.init = function(){
 
     // DRAW SVG
     self.margin = {left: 20, right: 60, top: 20, bottom: 50}
-    self.svgWidth = $(self.svgID).width();
-    self.svgHeight = $(self.svgID).height();
-    
-    // example append
-    self.svg.append('rect')
-        .attr('x', 20)
-        .attr('y', 10)
-        .attr('width', 100)
-        .attr('height', 40);
+    self.svgWidth = $(self.svgID).width()- self.margin.left - self.margin.right;
+    self.svgHeight = $(self.svgID).height()- self.margin.top - self.margin.bottom;
 }
 
 /**
  *
  */
 PurchasingBarGraph.prototype.update = function(){
-    var self = this
+    var self = this;
+
+    // For now, just administration. Can change value by changing get data
+    var data = self.data.get("Administration");
+    //var data = self.data.get("Facilities");
+
+    // List of groups- location
+    let purchasesByLocation = new Map();
+    for(let i = 0; i<data.length; i++){
+        let currentPurchase = data[i];
+        let location = currentPurchase.location;
+        // BY LOCATION
+        if(purchasesByLocation.has(location)){
+            purchasesByLocation.get(location).push(currentPurchase);
+        }
+        else{
+            purchasesByLocation.set(location, [currentPurchase]);
+        }
+    }
+    console.log(purchasesByLocation);
+
+    // Count and store number of purchases- cc and loyalty separately
+    var arr = [];
+
+    purchasesByLocation.forEach(function(value, key) {
+        //console.log(key);
+        var cc=0;
+        var loyalty=0;
+        value.forEach(function(d){
+            //console.log(d);
+            if (d.type=="cc"){
+                cc+=1;
+            }
+            else {
+                loyalty+=1;
+            }
+        });
+        arr.push({location:key,loyalty:loyalty,cc:cc});
+    });
+
+    console.log(arr);
+
+    //Location groups
+    const groups = arr.map(d => d.location);
+    //console.log(groups)
+
+    // List of subgroups- type
+    var subgroups = ["loyalty","cc"];
+
+
+    // Add X axis
+    var x = d3.scaleBand()
+        .domain(groups)
+        .range([0, self.svgWidth])
+        .paddingInner([0.1]);
+
+    self.svg.append("g")
+        .attr("transform", "translate(0," + self.svgHeight + ")")
+        .attr("class","x-axis axis")
+        .call(d3.axisBottom(x).tickSize(0));
+
+    // Add Y axis
+    var y = d3.scaleLinear()
+        //.domain([0, d3.max(arr, function (d) { return d.loyalty;})])
+        .range([ self.svgHeight, 0]);
+    self.svg.append("g")
+        .attr("class","y-axis axis")
+        .call(d3.axisLeft(y));
+
+    // Setting y domain
+    y.domain([0, d3.max(arr, function(d) { return d3.max(subgroups, function(sub) { return d[sub]; }); })]).nice();
+
+    // Another scale for subgroup position
+    var xSubgroup = d3.scaleBand()
+        .domain(subgroups)
+        .range([0, x.bandwidth()])
+        .padding([0.05]);
+
+    // color palette = one color per subgroup
+    var color = d3.scaleOrdinal()
+        .domain(subgroups)
+        .range(['#e41a1c','#377eb8']);
+
+    // Show the bars
+    self.svg.append("g")
+        .selectAll("g")
+        // Enter in data = loop group per group
+        .data(arr)
+        .join("g")
+        .attr("transform", d => `translate(${x(d.location)}, 0)`)
+        .selectAll("rect")
+        .data(function(d) { return subgroups.map(function(key) { return {key: key, value: d[key]}; }); })
+        .join("rect")
+        .attr("x", d => xSubgroup(d.key))
+        .attr("y", d => y(d.value))
+        .attr("width", xSubgroup.bandwidth())
+        .attr("height", d => self.svgHeight - y(d.value))
+        .attr("fill", d => color(d.key))
+        .on("mouseover", d => console.log(d.srcElement.__data__));
 }

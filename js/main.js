@@ -336,8 +336,8 @@ Main.prototype.init = function(){
     
                         let k = new KronosMap('kronos-map', gpsMapStationary);
                         let a = new AbilaMap('abila-map', gpsMapStationary);
-                        let p = new PurchasingBarGraph('bar-graph-purchases');
-    
+                        let p = new PurchasingBarGraph('bar-graph-purchases',purchasesByEmploymentType);
+                        p.update();
                         
                     });
     
@@ -359,9 +359,7 @@ Main.prototype.init = function(){
 Main.prototype.gpsEquality = function(currentEntry, checkEntry){
     return Math.abs(checkEntry.lat - currentEntry.lat) < 0.005
     && Math.abs(checkEntry.long - currentEntry.long) < 0.005;
-
 }
-
 
 let m = new Main();
 
