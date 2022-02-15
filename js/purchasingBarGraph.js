@@ -129,6 +129,7 @@ PurchasingBarGraph.prototype.update = function(){
             self.svg.selectAll("rect").classed("highlighted", false);
         })
         .on("click", function(d,i){
+            // call scatterChart
             self.scatterChart.update(i);
         });
 }
