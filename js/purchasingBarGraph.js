@@ -1,7 +1,6 @@
 function PurchasingBarGraph(id,data){
     var self = this;
-
-    self.svg = d3.select(`#${id}`)
+    
     self.svgID = '#'+id;
     self.data = data;
 
@@ -16,6 +15,8 @@ PurchasingBarGraph.prototype.init = function(){
     self.margin = {left: 20, right: 60, top: 20, bottom: 50}
     self.svgWidth = $(self.svgID).width()- self.margin.left - self.margin.right;
     self.svgHeight = $(self.svgID).height()- self.margin.top - self.margin.bottom;
+
+    self.svg = d3.select(`${self.svgID}`).append("g").attr("transform", "translate(" + self.margin.left + "," + self.margin.top + ")");
 }
 
 /**
@@ -79,7 +80,7 @@ PurchasingBarGraph.prototype.update = function(){
         .paddingInner([0.1]);
 
     self.svg.append("g")
-        .attr("transform", "translate(0," + self.svgHeight + ")")
+        .attr("transform", "translate("+self.margin.left+"," + self.svgHeight + ")")
         .attr("class","x-axis axis")
         .call(d3.axisBottom(x).tickSize(0));
 
@@ -89,6 +90,7 @@ PurchasingBarGraph.prototype.update = function(){
         .range([ self.svgHeight, 0]);
     self.svg.append("g")
         .attr("class","y-axis axis")
+        .attr("transform", "translate("+self.margin.left+",0)")
         .call(d3.axisLeft(y));
 
     // Setting y domain
@@ -111,7 +113,7 @@ PurchasingBarGraph.prototype.update = function(){
         // Enter in data = loop group per group
         .data(arr)
         .join("g")
-        .attr("transform", d => `translate(${x(d.location)}, 0)`)
+        .attr("transform", d => `translate(${x(d.location)+self.margin.left}, 0)`)
         .selectAll("rect")
         .data(function(d) { return subgroups.map(function(key) { return {key: key, value: d[key]}; }); })
         .join("rect")
@@ -120,5 +122,5 @@ PurchasingBarGraph.prototype.update = function(){
         .attr("width", xSubgroup.bandwidth())
         .attr("height", d => self.svgHeight - y(d.value))
         .attr("fill", d => color(d.key))
-        .on("mouseover", d => console.log(d.srcElement.__data__));
+        .on("mouseover", d => console.log(d));
 }
