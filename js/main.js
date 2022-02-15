@@ -338,6 +338,7 @@ Main.prototype.init = function(){
                         let a = new AbilaMap('abila-map', gpsMapStationary);
                         let p = new PurchasingBarGraph('bar-graph-purchases',purchasesByEmploymentType);
                         p.update();
+                        let pSearch = new PurchasingSearch(purchases);
                         
                     });
     

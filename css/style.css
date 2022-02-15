@@ -26,3 +26,44 @@ div.tooltip-donut {
     pointer-events: none;
     font-size: 1.3rem;
 }
+
+section.purchasing-search > div {
+    margin-top:10px;
+}
+
+#purchasing-search{
+    padding: 0;
+}
+.date, .time, .type{
+    font-weight: 500;
+}
+
+#purchasing-search span{
+    display: block;
+    /* width:600px; */
+    flex: 1;   
+}
+
+span.time, span.date, span.type, span.price{
+    flex:0.5 !important;
+}
+#purchasing-search li {
+    display:flex;
+}
+#purchasing-search li:not(#purchases-header) {
+    background-color: #d9d9e5;
+    padding: 9px 10px;
+    border-radius: 10px;
+    margin: 5px 0px;
+}
+#purchases-header span{
+    color: grey;
+    padding-bottom: 10px;
+    font-weight: 800 !important;
+}
+
+#numResults {
+    color: grey;
+    padding-left:10px;
+    margin-top: 20px;
+}
