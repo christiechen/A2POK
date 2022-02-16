@@ -12,7 +12,10 @@ PurchasingSearch.prototype.init = function(){
 
     //on click
     $('#searchPurch').on('click', ()=>{
-        let searches = self.purchases;
+        console.log('hi');
+        console.log(self.purchases.length);
+
+        let searches = [...self.purchases];
 
         let start = document.getElementById('startDatePurch').value;
         let startDate = new Date(start);
