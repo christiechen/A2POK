@@ -1,9 +1,12 @@
-function PurchasingBarGraph(id,data){
+function PurchasingBarGraph(id, data, purchasesByEmployee, purchasesByLocation){
     var self = this;
     
     self.svgID = '#'+id;
     self.data = data;
     self.scatterChart = new ScatterChart();
+    self.purchasesByEmployee = purchasesByEmployee;
+    self.purchasesByLocation = purchasesByLocation;
+    
     self.init();
     
 }
@@ -130,6 +133,6 @@ PurchasingBarGraph.prototype.update = function(){
         })
         .on("click", function(d,i){
             // call scatterChart
-            self.scatterChart.update(i);
+            self.scatterChart.update(i, self.purchasesByLocation);
         });
 }

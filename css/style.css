@@ -10,6 +10,10 @@ svg{
     border: 1px solid black;
 }
 
+#scatter-purchases{
+    height: 950px;
+}
+
 
 .no-show{
     display: none;
@@ -68,7 +72,22 @@ span.time, span.date, span.type, span.price{
     margin-top: 20px;
 }
 
+circle.purchasesScatter{
+    /* fill: black; */
+    opacity: 0.3;
+    /* stroke: black; */
+}
+
+
 .highlighted{
     stroke: #404040;
     stroke-width:4;
+}
+
+.axis-label{
+    fill: black;
+}
+
+div.tooltip-donut.scatter{
+    font-size: 10px;
 }
