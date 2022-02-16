@@ -58,18 +58,22 @@ PurchasingSearch.prototype.init = function(){
             console.log('no location')
         }
         
-        if(searches.length === self.purchases.length){ //no filtering going on, don't break the page
-            alert("Please pick factors to filter purchasing data")
-        }
-        else{
-            self.draw(searches);
-        }
+        console.log("========= SEARCH RESULTS ==========");
+        console.log(searches);
+        
+        self.draw(searches);
   
     });
 }
 
 PurchasingSearch.prototype.draw = function(searches){
     $('#numSearches').text(`${searches.length} results`);
+    
+
+    if( searches.length > 500){
+        searches.length = 500;
+        alert("Too many results returned; first 500 are shown on page. Please check the console for a full list of your results.")
+    }
     
     let ul = $("#purchasing-search");
 
@@ -94,7 +98,7 @@ PurchasingSearch.prototype.draw = function(searches){
         console.log('hi');
         ul.append(`
             <li> 
-                <span class='date'> ${el.timestamp.getMonth()+1}/${el.timestamp.getDate()}/${el.timestamp.getYear()}</span> 
+                <span class='date'> ${el.timestamp.getMonth()+1}/${el.timestamp.getDate()}/${el.timestamp.getFullYear()}</span> 
                 <span class='time'> ${el.timestamp.getHours() === 0 ? el.timestamp.getHours() + '0' : el.timestamp.getHours()}:${el.timestamp.getMinutes() === 0 ? el.timestamp.getMinutes() + '0' : el.timestamp.getMinutes()}</span> 
                 <span class='type'> ${el.type === 'cc'? "Credit Card" : "Loyalty"}</span> 
                 <span class='price'> ${el.price}</span> 
