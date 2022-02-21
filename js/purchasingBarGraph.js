@@ -25,11 +25,11 @@ PurchasingBarGraph.prototype.init = function(){
 /**
  *
  */
-PurchasingBarGraph.prototype.update = function(){
+PurchasingBarGraph.prototype.update = function(employeeType){
     var self = this;
 
     // For now, just administration. Can change value by changing get data
-    var data = self.data.get("Administration");
+    var data = self.data.get(employeeType);
     //var data = self.data.get("Facilities");
 
     // List of groups- location
