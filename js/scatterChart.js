@@ -22,9 +22,6 @@ ScatterChart.prototype.init = function(){
 
 
     // ======== LEGEND ========
-    self.svg.selectAll('.legend-group').remove();
-
-
 
     
     self.legend = self.svg.append('g')
@@ -63,7 +60,7 @@ ScatterChart.prototype.init = function(){
         .attr('y', (d) => y+=25)
         .attr('width', 20)
         .attr('height', 10)
-        .attr("fill", (d) => d === 'loyalty' ? 'blue' : 'red')
+        .attr("fill", (d) => d === 'loyalty' ? 'red' : 'blue')
         .attr('opacity', 0.5);
 
     y = 0;
@@ -196,7 +193,7 @@ ScatterChart.prototype.update = function(locationData, purchasesByLocation, purc
         .attr("r", 5)
         .attr("cx", (d) => self.xScale(d.timestamp.getDate()))
         .attr("cy", (d) => self.yScale(d.price))
-        .attr("fill", (d) => d.type === 'loyalty' ? 'blue' : 'red')
+        .attr("fill", (d) => d.type === 'loyalty' ? 'red' : 'blue')
         .attr("class", (d) => `purchasesScatter ${self.purchaseType === "" ? "" : (self.purchaseType === d.type ? "" : "hide")}`)
         .on('mouseover', (e, d)=>{
             self.div.transition()

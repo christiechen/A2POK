@@ -97,6 +97,39 @@ PurchasingBarGraph.prototype.init = function(){
         })
         .attr("class", "legend-text");
 
+
+
+    // CC/LOYALTY LEGEND
+    
+    self.legend = self.svg.append('g')
+        .attr('class', 'pType-legend-group')
+        .attr('transform', `translate(${self.svgWidth - self.margin.right-150}, -120)`);
+
+    self.legendData = ['loyalty', 'cc'];
+
+    self.legend = self.legend.selectAll(".legend").data(self.legendData);
+    self.legendEnter = self.legend
+        .enter()
+        .append("g")
+        .attr("class","noclick-legend")
+        .attr("transform", 'translate(0, )');
+
+    let y = -15;
+    self.legendEnter.append("circle")
+        .attr('cx', -5)
+        .attr('cy', (d) => y+=25)
+        .attr('r', 7)
+        .attr("fill", (d) => d === 'loyalty' ? '#e41a1c' : '#377eb8');
+
+    y = -10;
+    self.legendEnter
+        .append("text")
+        .attr("x", 10)
+        .attr("y", (d)=>y+=25)
+        .text((d) => d)
+        .attr("class", "legend-text");
+
+
     //mimic a click on the first legend entry
     document.querySelector('#bar-graph-purchases .legend').dispatchEvent(new Event('click'));
 }
