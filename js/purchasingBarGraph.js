@@ -20,6 +20,66 @@ PurchasingBarGraph.prototype.init = function(){
     self.svgHeight = $(self.svgID).height()- self.margin.top - self.margin.bottom;
 
     self.svg = d3.select(`${self.svgID}`).append("g").attr("transform", "translate(" + self.margin.left + "," + self.margin.top + ")");
+
+    self.employmentType = ["Information Technology","Engineering","Executive","Security","Facilities"];
+    self.legend = self.svg.selectAll(".legend").data(self.employmentType);
+    self.legendEnter = self.legend
+        .enter()
+        .append("g")
+        .attr("class","legend")
+        .on("click", function(d, i){
+            self.update(i);
+        });
+
+    self.legendEnter.append("circle")
+        .attr('cx', self.svgWidth-150)
+        .attr('cy', function(d){
+            if (d=="Information Technology") {
+                return 10;
+            }
+            else if (d=="Engineering"){
+                return 35;
+            }
+            else if (d=="Executive"){
+                return 60;
+            }
+            else if (d=="Security"){
+                return 85;
+            }
+            else {
+                return 110;
+            }
+        })
+        .attr('r', 10)
+        .attr('stroke', 'black')
+        .attr('fill', '#69a3b2');
+
+    self.legendEnter
+        .append("text")
+        .attr("x", self.svgWidth - 135)
+        .attr("y", function (d) {
+            if (d=="Information Technology") {
+                return 15;
+            }
+            else if (d=="Engineering"){
+                return 40;
+            }
+            else if (d=="Executive"){
+                return 65;
+            }
+            else if (d=="Security"){
+                return 90;
+            }
+            else {
+                return 115;
+            }
+        })
+        .text(function (d) {
+            return d;
+        })
+        .attr("class", "legend-text");
+
+
 }
 
 /**
@@ -28,9 +88,21 @@ PurchasingBarGraph.prototype.init = function(){
 PurchasingBarGraph.prototype.update = function(employeeType){
     var self = this;
 
+    self.svg.selectAll(".axis").remove();
+    self.svg.selectAll("rect").remove();
+
+    //console.log(employeeType);
+
     // For now, just administration. Can change value by changing get data
     var data = self.data.get(employeeType);
+    //var data = self.data.get("Information Technology");
+    //var data = self.data.get("Engineering");
+    //var data = self.data.get("Executive");
+    //var data = self.data.get("Security");
     //var data = self.data.get("Facilities");
+
+    //console.log("DATA!!!!!!");
+    //console.log(data);
 
     // List of groups- location
     let purchasesByLocation = new Map();
