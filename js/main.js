@@ -287,6 +287,23 @@ Main.prototype.init = function(){
                         // console.log(purchases);
     
     
+                        //sort all maps
+
+                        // console.log(purchasesByEmploymentType.get('Security'));
+                        // let sec = purchasesByEmploymentType.get('Security');
+                        // sec.sort((a,b) => a.location - b.location);
+                        // console.log(sec);
+
+                        for (let [key, value] of purchasesByEmployee){
+                            console.log(value);
+                            value.sort((a,b) => a.location.localeCompare(b.location));
+                        }
+                        for (let [key, value] of purchasesByEmploymentType){
+                            value.sort((a,b) => a.location.localeCompare(b.location));
+                        }
+                        for (let [key, value] of purchasesByEmploymentTitle){
+                            value.sort((a,b) => a.location.localeCompare(b.location));
+                        }
     
                         // =========== START CREATING SVGS ===========
     
@@ -338,7 +355,7 @@ Main.prototype.init = function(){
                         let a = new AbilaMap('abila-map', gpsMapStationary);
                         let p = new PurchasingBarGraph('bar-graph-purchases',purchasesByEmploymentType, purchasesByEmployee, purchasesByLocation);
                         // Initially set to administration
-                        p.update("Administration");
+                        // p.update("Administration");
                         let pSearch = new PurchasingSearch(purchases);
                         
                     });

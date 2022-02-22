@@ -102,7 +102,7 @@ PurchasingSearch.prototype.draw = function(searches){
         ul.append(`
             <li> 
                 <span class='date'> ${el.timestamp.getMonth()+1}/${el.timestamp.getDate()}/${el.timestamp.getFullYear()}</span> 
-                <span class='time'> ${el.timestamp.getHours() === 0 ? el.timestamp.getHours() + '0' : el.timestamp.getHours()}:${el.timestamp.getMinutes() === 0 ? el.timestamp.getMinutes() + '0' : el.timestamp.getMinutes()}</span> 
+                <span class='time'> ${el.timestamp.getHours() < 10 ? '0' + el.timestamp.getHours(): el.timestamp.getHours()}:${el.timestamp.getMinutes() < 10 ? '0' + el.timestamp.getMinutes(): el.timestamp.getMinutes()}</span> 
                 <span class='type'> ${el.type === 'cc'? "Credit Card" : "Loyalty"}</span> 
                 <span class='price'> ${el.price}</span> 
                 <span class='location'> ${el.location}</span> 
