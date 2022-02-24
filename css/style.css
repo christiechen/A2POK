@@ -124,3 +124,27 @@ img{
     width: 1000px;
     height: 700px;
 }
+
+
+#map-select{
+    display: flex;
+
+}
+
+#map-select ul{
+    width:40%;
+    list-style: none;
+}
+
+#map-select li{
+    font-size: 20px;
+}
+
+#legend-map li:hover{
+    font-weight: bold;
+}
+#legend-map li.selected{
+    text-decoration: underline;
+    font-weight: bold;
+
+}
