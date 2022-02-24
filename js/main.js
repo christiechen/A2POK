@@ -351,7 +351,7 @@ Main.prototype.init = function(){
                         console.log("purchases by location:");
                         console.log(purchasesByLocation);
     
-                        let k = new KronosMap('kronos-map', gpsMapStationary);
+                        // let amnp = new AbilaMapNoPlay('abila-map', gpsMapStationary, employeeIndividual);
                         let a = new AbilaMap('abila-map', gpsMapStationary, employeeIndividual);
                         let p = new PurchasingBarGraph('bar-graph-purchases',purchasesByEmploymentType, purchasesByEmployee, purchasesByLocation);
                         // Initially set to administration
