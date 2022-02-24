@@ -120,7 +120,7 @@ div.tooltip-donut.scatter{
 img{
     position: absolute;
     z-index: -4;
-    opacity: 0.75;   
+    opacity: 0.55;   
     width: 1000px;
     height: 700px;
 }

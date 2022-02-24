@@ -123,7 +123,7 @@ AbilaMap.prototype.changeTime = function (dates) {
     self.svg.selectAll("circle").data(gpsArr).enter().append('circle')
         .attr('cx', function (d) { return projection([d.long, d.lat])[0] })
         .attr('cy', function (d) { return projection([d.long, d.lat])[1] })
-        .attr('r', 4).attr('fill', 'red')
+        .attr('r', 7).attr('fill', 'red')
         .attr('stroke', 'black')
         .attr('stroke-width', .5)
         .attr('class', (d) => { 
