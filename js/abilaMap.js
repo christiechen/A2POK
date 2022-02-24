@@ -87,7 +87,7 @@ AbilaMap.prototype.changeTime = function (dates) {
             div.transition()
                 .duration(200)
                 .style("opacity", .9);
-            div.html(d.FirstName + " " + d.LastName)
+            div.html(d.FirstName + " " + d.LastName + " " + d.Timestamp.getHours() + ":" + d.Timestamp.getMinutes())
                 .style("left", (event.pageX) + "px")
                 .style("top", (event.pageY - 28) + "px");
         })

@@ -84,7 +84,7 @@ KronosMap.prototype.changeTime = function (dates) {
     }
     var projection = d3.geoMercator().translate([self.svgWidth / 2, self.svgHeight / 2]).fitSize([self.svgWidth - 5, self.svgHeight - 5], self.topo)
 
-    console.log(currData)
+    // console.log(currData)
 
     var div = d3.select("body").append("div")
         .attr("class", "tooltip-donut")

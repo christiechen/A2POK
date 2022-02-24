@@ -295,7 +295,7 @@ Main.prototype.init = function(){
                         // console.log(sec);
 
                         for (let [key, value] of purchasesByEmployee){
-                            console.log(value);
+                            // console.log(value);
                             value.sort((a,b) => a.location.localeCompare(b.location));
                         }
                         for (let [key, value] of purchasesByEmploymentType){
