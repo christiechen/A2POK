@@ -39,6 +39,9 @@ PurchasingBarGraph.prototype.init = function(){
             this.setAttribute("class", this.classList + " selected"); 
             self.employmentTypeFilter= i;
             self.update(i);
+            if(self.clickedBar){
+                self.clickedBar.dispatchEvent(new Event('click'));
+            }
 
         });
 
@@ -112,7 +115,7 @@ PurchasingBarGraph.prototype.init = function(){
         .enter()
         .append("g")
         .attr("class","noclick-legend")
-        .attr("transform", 'translate(0, )');
+        // .attr("transform", 'translate(0, )');
 
     let y = -15;
     self.legendEnter.append("circle")
@@ -280,7 +283,9 @@ PurchasingBarGraph.prototype.update = function(employeeType){
         })
         .on("click", function(d,i){
             // call scatterChart
-            self.scatterChart.update(i, self.purchasesByLocation, ""); //eventually will have to pass in employee name here
+            self.scatterChart.update(i, self.purchasesByLocation, "", self.employmentTypeFilter); //eventually will have to pass in employee name here
             $('#scatter-section').css("display", "block");
+            self.clickedBar = this;
+            // console.log("SIMULATED CLICK");
         });
 }

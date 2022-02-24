@@ -35,13 +35,13 @@ ScatterChart.prototype.init = function(){
         .enter()
         .append("g")
         .attr("class","legend")
-        .attr("transform", 'translate(0, )')
+        // .attr("transform", 'translate(0, )')
         .on("click", function(d, i){
             //deselecting currently selected
             if(this.classList.toString().indexOf("selected") !== -1){
                 let legs = document.querySelectorAll('#scatter-purchases .legend');
                 Array.from(legs).forEach((el) => el.setAttribute("class", "legend"));
-                self.update(self.currentLocationData, self.purchasesByLocation, "");
+                self.update(self.currentLocationData, self.purchasesByLocation, "", self.employmentTypeFilter);
             }
             //selecting new category
             else{
@@ -50,7 +50,7 @@ ScatterChart.prototype.init = function(){
                 Array.from(legs).forEach((el) => el.setAttribute("class", "legend"));
     
                 this.setAttribute("class", this.classList + " selected"); 
-                self.update(self.currentLocationData, self.purchasesByLocation, i);
+                self.update(self.currentLocationData, self.purchasesByLocation, i, self.employmentTypeFilter);
             }
         });
 
@@ -128,7 +128,7 @@ ScatterChart.prototype.init = function(){
 /**
  *
  */
-ScatterChart.prototype.update = function(locationData, purchasesByLocation, purchaseType){
+ScatterChart.prototype.update = function(locationData, purchasesByLocation, purchaseType, employmentTypeFilter){
     var self = this;
     console.log("update");
     console.log(locationData);
@@ -136,8 +136,9 @@ ScatterChart.prototype.update = function(locationData, purchasesByLocation, purc
     self.currentLocationData = locationData;
     self.purchasesByLocation = purchasesByLocation;
     self.purchaseType = purchaseType;
+    self.employmentTypeFilter = employmentTypeFilter;
 
-    $('#loc').text(locationData.location);
+    $('#loc').text(locationData.location + "—— " + self.employmentTypeFilter);
 
     let currPurchases = purchasesByLocation.get(locationData.location);
     
@@ -194,12 +195,16 @@ ScatterChart.prototype.update = function(locationData, purchasesByLocation, purc
         .attr("cx", (d) => self.xScale(d.timestamp.getDate()))
         .attr("cy", (d) => self.yScale(d.price))
         .attr("fill", (d) => d.type === 'loyalty' ? 'red' : 'blue')
-        .attr("class", (d) => `purchasesScatter ${self.purchaseType === "" ? "" : (self.purchaseType === d.type ? "" : "hide")}`)
+        .attr("class", (d) => `purchasesScatter ${ 
+            (self.purchaseType !== "" && self.purchaseType !== d.type) || 
+            (self.employmentTypeFilter !== "" && self.employmentTypeFilter !== d.employmentType) ? 
+            "hide" : ""
+        }`)
         .on('mouseover', (e, d)=>{
             self.div.transition()
                 .duration(200)
                 .style("opacity", .9);
-            self.div.html(`${d.FirstName} ${d.LastName}:  <br/>
+            self.div.html(`${d.FirstName} ${d.LastName} (${d.employmentType}):  <br/>
                             $${d.price} <br/>
                             on ${d.timestamp.getMonth()+1}/${d.timestamp.getDate()} 
                             at ${d.timestamp.getHours() < 10 ? '0'+d.timestamp.getHours() : d.timestamp.getHours()}:${d.timestamp.getMinutes() < 10 ? '0' + d.timestamp.getMinutes() : d.timestamp.getMinutes()} <br/>
