@@ -295,7 +295,7 @@ Main.prototype.init = function(){
                         // console.log(sec);
 
                         for (let [key, value] of purchasesByEmployee){
-                            console.log(value);
+                            // console.log(value);
                             value.sort((a,b) => a.location.localeCompare(b.location));
                         }
                         for (let [key, value] of purchasesByEmploymentType){
@@ -351,8 +351,8 @@ Main.prototype.init = function(){
                         console.log("purchases by location:");
                         console.log(purchasesByLocation);
     
-                        // let k = new KronosMap('kronos-map', gpsMapStationary);
-                        let a = new AbilaMap('abila-map', gpsMapStationary);
+                        // let amnp = new AbilaMapNoPlay('abila-map', gpsMapStationary, employeeIndividual);
+                        let a = new AbilaMap('abila-map', gpsMapStationary, employeeIndividual);
                         let p = new PurchasingBarGraph('bar-graph-purchases',purchasesByEmploymentType, purchasesByEmployee, purchasesByLocation);
                         // Initially set to administration
                         // p.update("Administration");
