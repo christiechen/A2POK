@@ -7,16 +7,38 @@ function AbilaMap(id, gps) {
     self.svgWidth = $(self.svgID).width();
     self.svgHeight = $(self.svgID).height();
     self.employmentTypeFilter = "";
+
     self.init();
 }
 
 AbilaMap.prototype.init = function () {
-    var self = this;
 
-    // DRAW SVG
-    self.margin = { left: 20, right: 60, top: 20, bottom: 50 }
-    self.svgWidth = $(self.svgID).width();
-    self.svgHeight = $(self.svgID).height();
+
+
+
+    // crude legend 
+    let empTypes = new Set();
+    for (let [key, value] of self.gpsData) {
+        let gpsVal = value[0];
+        empTypes.add(gpsVal.employmentType);
+    }
+    for (let type of empTypes) {
+        $("#legend-map").append(`<li>${type}</li>`);
+    }
+    //add click events
+    $("#legend-map li").click(function (e, i) {
+        $("#legend-map li").removeClass("selected");
+        if (self.employmentTypeFilter === $(this).text()) {
+            //unselecting
+            self.employmentTypeFilter = "";
+            $(this).removeClass("selected");
+        }
+        else {
+            self.employmentTypeFilter = $(this).text();
+            $(this).addClass("selected");
+        }
+    })
+
 
 
 
@@ -102,8 +124,6 @@ AbilaMap.prototype.init = function () {
     })
 
 }
-
-
 
 
 AbilaMap.prototype.wrangleData = function (dates) {
@@ -316,6 +336,7 @@ at ${d.Timestamp.getHours() < 10 ? '0' + d.Timestamp.getHours() : d.Timestamp.ge
         });
 
 
+
     //add colors
     let colors = ["#00a60e", "#e659ff", "#2ea1ff", "#ff892e", "#ff2e2e",
         "#772eff", "#d6c800", "#0d11ff", "#448c00", "#005445", "#780024", "#783e00",
@@ -334,5 +355,3 @@ at ${d.Timestamp.getHours() < 10 ? '0' + d.Timestamp.getHours() : d.Timestamp.ge
         i++;
     }
 }
-
-
