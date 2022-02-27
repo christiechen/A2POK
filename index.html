@@ -9,7 +9,13 @@
 
 	<!-- Load CSS libraries -->
 	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	
 	<link rel="stylesheet" href="css/style.css">
+
 
 	<style>
 		/* *** ADD CUSTOM STYLES HERE *** */
@@ -20,7 +26,7 @@
 <body>
 	<!-- <svg id="map"></svg> -->
 	<h1>
-		TITLE
+		A2 POK CSE 557
 	</h1>
 
 	<section>
@@ -76,19 +82,18 @@
 	<section class='purchasing-search'>
 		<h2> Purchasing search </h2>
 		<div>
+			<label for='startDatePurch'> Select Time Range: </label>
 			<input type="datetime-local" id="startDatePurch" name="startDatePurch" min="2014-01-06T06:25"
 				max="2014-01-19T21:00">
 			<input type="datetime-local" id="endDatePurch" name="endDatePurch" min="2014-01-06T06:25"
 				max="2014-01-19T21:00">
 		</div>
 		<div>
-			<label for="fNamePurch"> First Name </label>
+			<label for="fNamePurch"> First Name: </label>
 			<input type="text" id="fNamePurch" name="namePurch">
-			<label for="lNamePurch"> Last Name </label>
+			<label for="lNamePurch"> Last Name: </label>
 			<input type="text" id="lNamePurch" name="namePurch">
-		</div>
-		<div>
-			<label for="locationPurch"> Location </label>
+			<label for="locationPurch"> Location: </label>
 			<input type="text" id="locationPurch" name="locationPurch">
 		</div>
 

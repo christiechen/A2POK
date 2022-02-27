@@ -1,13 +1,36 @@
+*{
+    font-family: 'Poppins', sans-serif;    
+}
 body{
     width: 90%;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
 }
-
+section{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    max-width: 1000px;
+    margin-bottom: 40px;
+}
 svg{
     width: 1000px;
     height: 700px;
     border: 1px solid black;
+}
+
+label{
+    max-width: 1000px;
+}
+#allButton{
+    float:right;
+    margin-right: 8px;
+    margin-top: 10px;
+}
+button:hover{
+    background-color:rgb(223, 223, 223);
+
 }
 
 #bar-graph-purchases{
@@ -19,6 +42,15 @@ svg{
 }
 #scatter-section{
     display: none;
+}
+
+#scatter-section{
+    margin-top: 40px;
+}
+
+
+section.purchasing-search > div{
+    width: 1000px;
 }
 
 .no-show{
@@ -140,11 +172,21 @@ img{
     font-size: 20px;
 }
 
+#legend-map li{
+    background-color: rgb(233, 233, 233);
+    border-radius: 15px;
+    margin-bottom:5px;
+    padding-left: 17px;
+}
 #legend-map li:hover{
-    font-weight: bold;
+    font-weight: 600;
+    background-color:rgb(223, 223, 223)
+
 }
 #legend-map li.selected{
     text-decoration: underline;
-    font-weight: bold;
+    font-weight: 600;
+    background-color:rgb(201, 201, 201)
+
 
 }
