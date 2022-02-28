@@ -126,10 +126,9 @@ Main.prototype.init = function(){
     
                 // ========= GPS INTERVALS ==========
                 let gpsMapIntervals = new Map();
-                //first round of filtering --> every 5 minutes at most
-    
+                //first round of filtering --> every 10 minutes at most
                 
-                let interval = 1000 * 60 * 20; // 1000 ms/s * 60s/min * 10 min
+                let interval = 1000 * 60 * 10; // 1000 ms/s * 60s/min * 10 min
     
                 for (let [id, entries] of gpsMapSplitCars.entries()) {
                     let temp = [];
@@ -150,15 +149,16 @@ Main.prototype.init = function(){
                 //we need to decide how far counts as "stationary"
                 // ========= GPS STATIONARY DARA ==========
                 
-                //filter for only stationary data; the car must have stayed in the same place for more than 30 mins
+                //filter for only stationary data; the car must have stayed in the same place for more than 5 mins
                 let gpsMapStationary = new Map();
-                let interval2 = 1000 * 60 * 5 // 1000 ms/s * 60s/min * 10 min
+                let interval2 = 1000 // 1000 ms/s * 60s/min * 5 min
     
                 for (let [id, entries] of gpsMapSplitCars.entries()) {
                     let i = 0;
                     let temp = [];
-                    while(i <entries.length){
+                    while(i < entries.length){
                         let currentEntry = entries[i];
+                        
                         //find the "end" of when this car is at this location.
                         let j = i+1;
                         let checkEntry = entries[j];
@@ -170,23 +170,27 @@ Main.prototype.init = function(){
                         }
     
                         //at this point, entries[j] is not the same as the checkEntry anymore.
-                        j--; //go back to the "last" entry, where the car was in the same location
+                        // j--; //go back to the "last" entry, where the car was in the same location
+                        if(j == entries.length){
+                            break;
+                        }
                         checkEntry = entries[j];
                         
                         let elapsed = checkEntry.Timestamp.getTime() - currentEntry.Timestamp.getTime(); // elapsed time in milliseconds
                         //check if the last entry that was the same as the currentEntry is more than interval2 time away
                         if(elapsed >= interval2){
                             temp.push(currentEntry);
-                            temp.push(checkEntry);
+                            // temp.push(checkEntry);
     
                             j++; //move to the next entry at a different location
                             i = j; //start at the nextEntry
                         }
                         else{
-                            i++; //else, if the time was not enough, check starting a the next entry.
+                            i++; //else, if the time was not enough, check starting at the next entry.
                         }
                     }
-                    gpsMapStationary.set(id, temp);
+                    let temp2 = [...temp];
+                    gpsMapStationary.set(id, temp2);
                     temp = [];
                 }
                 // console.log(gpsMapStationary);
