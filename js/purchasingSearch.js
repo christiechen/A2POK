@@ -26,6 +26,7 @@ PurchasingSearch.prototype.init = function(){
         let fName = $('#fNamePurch').val();
         let lName = $('#lNamePurch').val();
         let location = $('#locationPurch').val();
+        let employmentType = $('#employmentType').val();
 
         //filter each one separately so that not all fields have to be fileld out
         if(start !== ""){
@@ -56,6 +57,13 @@ PurchasingSearch.prototype.init = function(){
         }
         if(location !== ""){
             searches = searches.filter((el)=> el.location.toLowerCase().indexOf(location.toLowerCase()) !== -1);
+        }
+        else{
+            console.log('no location')
+        }
+
+        if(employmentType !== ""){
+            searches = searches.filter((el)=> el.employmentType.toLowerCase().indexOf(employmentType.toLowerCase()) !== -1);
         }
         else{
             console.log('no location')
