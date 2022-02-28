@@ -106,7 +106,7 @@ PurchasingSearch.prototype.draw = function(searches){
                 <span class='type'> ${el.type === 'cc'? "Credit Card" : "Loyalty"}</span> 
                 <span class='price'> ${el.price}</span> 
                 <span class='location'> ${el.location}</span> 
-                <span class='name'> ${el.FirstName} ${el.LastName}</span> 
+                <span class='name'> ${el.FirstName} ${el.LastName} (${el.employmentType})</span> 
                 
             </li>`);
 
