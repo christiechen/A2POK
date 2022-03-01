@@ -263,7 +263,7 @@ at ${d.Timestamp.getHours() < 10 ? '0' + d.Timestamp.getHours() : d.Timestamp.ge
                     })
                     i++;
                 }
-                return;
+                // return;
             }
             for(let person of people){
                 let name = person.split(" ");
@@ -294,6 +294,7 @@ at ${d.Timestamp.getHours() < 10 ? '0' + d.Timestamp.getHours() : d.Timestamp.ge
 
             dots.exit().remove();
             iterator += 1800000;
+            console.log(iterator)
         }
 
 
@@ -367,7 +368,7 @@ at ${d.Timestamp.getHours() < 10 ? '0' + d.Timestamp.getHours() : d.Timestamp.ge
             })
             i++;
         }
-        return;
+        // return;
     }
     for(let person of people){
         let name = person.split(" ");
