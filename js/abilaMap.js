@@ -221,7 +221,7 @@ AbilaMap.prototype.playAll = function (gpsMap, dates) {
                 .attr('stroke-width', .5)
                 .attr('class', (d) => {
                     people.add(`${d.FirstName} ${d.LastName}`);
-                    return `map ${d.FirstName}-${d.LastName}`
+                    return `map ${d.FirstName}-${d.LastName} ${d.employmentType}`
                 })
                 .on("mouseover", function (event, d) {
                     div.transition()
@@ -243,6 +243,28 @@ at ${d.Timestamp.getHours() < 10 ? '0' + d.Timestamp.getHours() : d.Timestamp.ge
 
             //add people legend
             $('#legend-people').empty();
+            if(self.employmentTypeFilter===""){
+                for(let type of self.empTypes){
+                    console.log('hello')
+                    $('#legend-people').append(`<li class='${type}'> ${type}</li>`)
+                }
+                let colors = ["#00a60e", "#e659ff", "#2ea1ff", "#ff892e", "#ff2e2e",
+                "#772eff", "#d6c800", "#0d11ff", "#448c00", "#005445", "#780024", "#783e00",
+                "#4c0078"];
+        
+                let i = 0;
+                for (let type of self.empTypes) {
+                    //for every type, assign a color
+                    let els = Array.from(document.getElementsByClassName(`${type}`));
+        
+                    els.forEach((el) => {
+                        $(el).css('color', colors[i]);
+                        $(el).css('fill', colors[i]);
+                    })
+                    i++;
+                }
+                return;
+            }
             for(let person of people){
                 let name = person.split(" ");
                 $('#legend-people').append(`<li class='${name[0]-name[1]}'>${name[0]} ${name[1]}</li>`)
