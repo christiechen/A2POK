@@ -263,28 +263,30 @@ at ${d.Timestamp.getHours() < 10 ? '0' + d.Timestamp.getHours() : d.Timestamp.ge
                     })
                     i++;
                 }
-                // return;
+                
             }
-            for(let person of people){
-                let name = person.split(" ");
-                $('#legend-people').append(`<li class='${name[0]-name[1]}'>${name[0]} ${name[1]}</li>`)
-            }
-            //add colors
-            let colors = ["#00a60e", "#e659ff", "#2ea1ff", "#ff892e", "#ff2e2e",
-                "#772eff", "#d6c800", "#0d11ff", "#448c00", "#005445", "#780024", "#783e00",
-                "#4c0078"];
-
-            let i = 0;
-            for (let person of people) {
-                //for ever person, assign a color
-                let name = person.split(" ");
-                let els = Array.from(document.getElementsByClassName(`${name[0]}-${name[1]}`));
-
-                els.forEach((el) => {
-                    $(el).css('color', colors[i]);
-                    $(el).css('fill', colors[i]);
-                })
-                i++;
+            else{
+                for(let person of people){
+                    let name = person.split(" ");
+                    $('#legend-people').append(`<li class='${name[0]-name[1]}'>${name[0]} ${name[1]}</li>`)
+                }
+                //add colors
+                let colors = ["#00a60e", "#e659ff", "#2ea1ff", "#ff892e", "#ff2e2e",
+                    "#772eff", "#d6c800", "#0d11ff", "#448c00", "#005445", "#780024", "#783e00",
+                    "#4c0078"];
+    
+                let i = 0;
+                for (let person of people) {
+                    //for ever person, assign a color
+                    let name = person.split(" ");
+                    let els = Array.from(document.getElementsByClassName(`${name[0]}-${name[1]}`));
+    
+                    els.forEach((el) => {
+                        $(el).css('color', colors[i]);
+                        $(el).css('fill', colors[i]);
+                    })
+                    i++;
+                }
             }
 
 
@@ -370,27 +372,30 @@ at ${d.Timestamp.getHours() < 10 ? '0' + d.Timestamp.getHours() : d.Timestamp.ge
         }
         // return;
     }
-    for(let person of people){
-        let name = person.split(" ");
-        $('#legend-people').append(`<li class='${name[0]}-${name[1]}'>${name[0]} ${name[1]}</li>`)
+    else{
+        for(let person of people){
+            let name = person.split(" ");
+            $('#legend-people').append(`<li class='${name[0]}-${name[1]}'>${name[0]} ${name[1]}</li>`)
+        }
+        //add colors
+        let colors = ["#00a60e", "#e659ff", "#2ea1ff", "#ff892e", "#ff2e2e",
+            "#772eff", "#d6c800", "#0d11ff", "#448c00", "#005445", "#780024", "#783e00",
+            "#4c0078"];
+    
+        let i = 0;
+        for (let person of people) {
+            //for ever person, assign a color
+            let name = person.split(" ");
+            let els = Array.from(document.getElementsByClassName(`${name[0]}-${name[1]}`));
+    
+            els.forEach((el) => {
+                $(el).css('color', colors[i]);
+                $(el).css('fill', colors[i]);
+            })
+            i++;
+        }
     }
-    //add colors
-    let colors = ["#00a60e", "#e659ff", "#2ea1ff", "#ff892e", "#ff2e2e",
-        "#772eff", "#d6c800", "#0d11ff", "#448c00", "#005445", "#780024", "#783e00",
-        "#4c0078"];
-
-    let i = 0;
-    for (let person of people) {
-        //for ever person, assign a color
-        let name = person.split(" ");
-        let els = Array.from(document.getElementsByClassName(`${name[0]}-${name[1]}`));
-
-        els.forEach((el) => {
-            $(el).css('color', colors[i]);
-            $(el).css('fill', colors[i]);
-        })
-        i++;
-    }
+   
 }
 
 
