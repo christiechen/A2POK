@@ -30,33 +30,51 @@ Any script used for your analysis (in your language of choice).  -->
     
     
     <nav>
+        <a href='#vis' class='first'> Visualization </a>
         <a href='#q1' class='first'> Question 1 </a>
         <a href='#q2' class='first'> Question 2 </a>
-        <!-- <a href='#vis' class='first'> The Structure of the Protectors of Kronos Network </a>
-        <a href='#evidence' class='first'> Supporting Evidence for the Structure of POK </a>
-        <a href='#leaders' class='second'> Leaders </a>
-        <a href='#extended' class='second'> Extended Network </a>
-        <a href='#connections' class='second'> GAStech Connections </a>
-        <a href='#changes' class='first'> Changes in POK Over Time </a>
-        <a href='#changesmem' class='second'> Changes in Membership </a>
-        <a href='#changesid' class='second'> Changes in Ideology and Behavior </a>
-        <a href='#timeline' class='first'> January 20-21, 2014 Timeline </a>
-        <a href='#reasoning' class='first'> Reasons Why the GAStech Employees May Be Missing </a>
-        <a href='#money' class='second'> Monetary Gain </a>
-        <a href='#revenge' class='second'> Revenge for Martyrs </a>
-        <a href='#insidejob' class='second'> An Inside Job </a> -->
     </nav>
+
+    
+    <header>
+        <h1 id='page-header'>A2 Report</h1>
+        <h4> Mia Collymore Abbas, Jiwon Choi, Christie Chen</h4>
+    </header>
+
+    <h1> Our Visualization </h1>
+    <section id='vis'>
+        <h2> Visualization Link </h2>
+        <p>
+            Please visit our <a href='index.html' target="_blank"> visualization tool </a> to explore the given data.
+        </p>
+        <h2> Video Tutorial </h2>
+        <p>
+            This video shows how we used our visualization tool to analyze patterns of behavior.
+        </p>
+        <video controls>
+            <source src="writeUp/video.mp4"/ >
+        </video>
+    </section>
 
     <h1> Question 1 </h1>
     <section id='q1'>
         <h2> Daily Schedule of a GasTech Employee </h2>
         <p>
-            <b class='notice'> description </b>
+            <b class='notice'> A very general layout of a single workday for a GasTech employee. </b>
         </p>
         <ul> 
-            <li>something here</li>
-            <li>something here</li>
-            <li>something here</li>
+            <li>7:30-7:50 AM — Daily coffee at the place of choice
+                <img src='writeUp/images/coffee-daily.png' />
+                We can see that employees are clustured around coffee shops on the way to/around the GasTech building: Jack's Magical Beans, Hallowed Grounds, Cup o' Joe, Brewe've Been Served, and Katerina's Cafe.
+            </li>
+            <li>8-8:30 AM — Employees seem to start working in this time period. Security starts to drive to GasTech around 8, and most Engineers join by 8:20.</li>
+            <li>12-1:30PM — Lunch break starts. Following a good 2-3 hours of mostly inactivity after people arrive at work, there is a flurry of activity from the company cars in all departments starting at 12. Employees mostly buy lunch or run errands; some go to the grocery store or visit other nearby areas on the way back to work.</li>
+            <li>1:30-2PM — Lunch break ends. Company cars in all departments start to drive back towards GasTech at 1:30.
+                <img src='writeUp/images/back-from-work.png' />
+
+                By hovering over the dots and looking at tooltips in the visualization, you can track the movement of the dots.
+            </li>
+            <li>Evening — In the evening, employees may host gatherings at bars or generally meet up. They also run personal errands, such as grocery shopping, etc...</li>
         </ul>
         
 
@@ -68,14 +86,14 @@ Any script used for your analysis (in your language of choice).  -->
     <section id='q2'>
         <h2> Irregular activity </h2>
         <p>
-            <b class='notice'> description </b>
+            <b class='notice'> Patterns or events of some significance that could inform POK activity. </b>
         </p>
         <ul>
-            <li class='event'>
+            <li class='event no-line'>
                 <div>
                     <div> 1.  </div>
                     <div>
-                        Security out driving late at night, anywhere from 11PM to 3AM.
+                        Security out driving late at night, anywhere from 11PM to 3AM on the east side of Abila.
                     </div>
                 </div>
                 <ul class='evidence'>
@@ -129,7 +147,38 @@ Any script used for your analysis (in your language of choice).  -->
                             </li>  
                         </ul>  
                     </li>
-                                
+                </ul>
+            </li>
+            <li class='event'>
+                <div>
+                    <div> 1a.  </div>
+                    <div>
+                        Over half of the purchases at Guy's Gyros are made by the Security department.
+                    </div>
+                </div>
+                <ul class='evidence'>
+                    <li class='people'>  
+                        <div> People </div>
+                        <ul>
+                            <li> Security department </li>
+                        </ul>
+                    </li>
+                    <li class='location'>  
+                        <div> Locations </div>
+                        Guy's Gyros
+                    </li>
+                    <li class='time'> 
+                        <div> Times </div>
+                        Consistently over the 2 weeks.
+                    </li>
+                    <li class='sig'> 
+                        <div> Significance </div>
+                        The increased frequency of purchases at Guy's Gyros imply that the Security department is disproportionally in that area at all times, sometimes late at night (10 or 11PM). This supports the theory that there is some kind of meeting spot in that area.
+                    </li>
+                    <li class='confidence'> 
+                        <div> Confidence level </div>
+                        8/10: This is consistent behavior that is specific to previously suspicious persons, for reasons including but not limited to those listed in (1) A1 data.
+                    </li>          
 
                 </ul>
             </li>
@@ -347,9 +396,214 @@ Any script used for your analysis (in your language of choice).  -->
                     </li>
                 </ul>
             </li>
+
+            <li class='event'>
+                <div>
+                    <div> 6.  </div>
+                    <div>
+                        Previously suspicious security employees are buying clothing.
+                    </div>
+                </div>
+                <ul class='evidence'>
+                    <li class='details'>  
+                        <div> Additional details </div>
+                        <ul>
+                            <li> 
+                                Of the security employees, only the empmloyees who were previously listed as suspicious bought from clothing stores.
+                            </li>
+                            <li> 
+                                We are assuming in this case that Roberts and Sons is a clothing store; there is little to no information about what Roberts and Sons is, but based on the price of purchases (average $200) made there, it is feasible that this storefront is for more upscale clothing, as these prices match purchases made at Albert's Fine Clothing.
+                            </li>
+                            <li> 
+                                Generally speaking, the people listed below tend to drive on routes that diverge from the rest of the company.
+                                <img src='writeUp/images/security-out-path.png'>
+                                We can see here that no other cars are around where Osvaldo is over the lunch break.
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='people'>  
+                        <div> People </div>
+                        <ul>
+                            <li> Minke Mies </li>
+                            <li> Inga Ferro </li>
+                            <li> Isia Vann </li>
+                            <li> Hennie Osvaldo </li>
+                        </ul>
+                    </li>
+                    <li class='location'>  
+                        <div> Locations </div>
+                        Albert's Fine Clothing and Robert and Sons
+                    </li>
+                    <li class='time'> 
+                        <div> Times </div>
+                        <ul>
+                            <li> Generally ocurring over the two weeks, seemingly no pattern. Slightly more concentration around 12-3PM.</li>
+                        </ul>
+                    </li>
+                    <li class='sig'> 
+                        <div> Significance </div>
+                        <ul>
+                            <li>
+                                From A1, we know that the catering company under suspicion for the kidnapping was wearing black uniforms — in fact, these black uniforms were emphasized as "shadowy." It's possible that the security members were buying matching catering uniforms for POK members.
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='confidence'> 
+                        <div> Confidence level </div>
+                        5/10: We don't know what they're buying, or that Roberts and Sons is a clothing store. However, this group of people is already suspicious for several reasons from Assignment 1.
+                        <ul class='a1'>
+                            <div> A1 data </div>
+                            <li> 
+                                <div class='name'>Isia Vann: </div>
+                                Please see (1) A1 data.
+                            <li> 
+                                <div class='name'>Hennie Osvaldo: </div>
+                                Please see (1) A1 data.
+                            </li> 
+                            <li> 
+                                <div class='name'>Minke Mies: </div>
+                                Please see (1) A1 data.
+                            </li> 
+                            <li> 
+                                <div class='name'> Inga Ferro: </div>
+                                Recipient of an email titled "FW: ARISE - Inspiration for Defenders of Kronos."
+                                As security, could have played a part in allowing the POK into the building.
+                            </li> 
+                        </ul>
+
+                    </li>
+                </ul>
+            </li>
+
+            <li class='event'>
+                <div>
+                    <div> 7.  </div>
+                    <div>
+                        There is an executive party welcoming CEO Sten Sanjorge Jr. to the island at the golf course; Orhan Strum attends this welcome party, but does not attend the golf rounds the week prior according to GPS data.
+                    </div>
+                </div>
+                <ul class='evidence'>
+                    <li class='details'>  
+                        <div> Additional details </div>
+                        <ul>
+                            <li> 
+                                Golfing isn't out of the norm for the executives. On the 12th, there was a golf game planned between executives (A1 email data). All of the executives on the island attended this game except for Orhan Strum.
+                            </li>
+                            <li> 
+                                However, Strum does attend the golf game for Sanjorge.
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='people'>  
+                        <div> People </div>
+                        <ul>
+                            <li> All executives </li>
+                        </ul>
+                    </li>
+                    <li class='location'>  
+                        <div> Locations </div>
+                        Desafio Golf Course
+                    </li>
+                    <li class='time'> 
+                        <div> Times </div>
+                        <ul>
+                            <li> 1/19 12PM-4PM </li>
+                        </ul>
+                    </li>
+                    <li class='sig'> 
+                        <div> Significance </div>
+                        <ul>
+                            <li>
+                                Orhan Strum is already an anomaly among CEOs, as we know the following from A1:
+                                <ul class='a1'>
+                                    <div> A1 data </div>
+                                    <li> 
+                                       He was born in Asteria, not Tethys.
+                                    <li> 
+                                        The Asterian People's Army is against MDMC distribution which is harming the people.
+                                    </li> 
+                                    <li> 
+                                        "ARISE" is against MDMC distribution.
+                                    </li> 
+                                    <li> 
+                                        "ARISE" was implied as an inspiration for the POK in an email chain between several security members at GasTech.
+                                    </li> 
+                                </ul>
+                            </li>
+                            <li>
+                                As an Asterian, he is either FOR the MDMC distribution, or he is AGAINST distributing MDMC. If he is FOR distribution, he could be a top target for the POK. If he is AGAINST distribution, he could be working with the POK. Either way, police could study the POK by digging into Strum's activity prior to the kidnapping.
+                            </li>
+                            <li>
+                               Generally speaking, this golf game should be of interest — it's the last time all executives of GasTech are together before the kidnapping.
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='confidence'> 
+                        <div> Confidence level </div>
+                        6/10: We don't know have data for other weeks; do executives usually miss golf games? Does Strum have a weekly activity that usually conflicts with golf games? However, despite this missing data, any activity around Strum should be investigated as he is the only executive not from Tethys.
+                    </li>
+                </ul>
+            </li>
+
+            <li class='event'>
+                <div>
+                    <div> 8.  </div>
+                    <div>
+                        There is a pattern in Engineering's credit card charges at the Chostus Hotel.
+                    </div>
+                </div>
+                <ul class='evidence'>
+                    <li class='details'>  
+                        <div> Additional details </div>
+                        <ul>
+                            <li> 
+                                Two members of the Engineering department, Brand Tempestad and Isande Borrasca, have credit card and loyalty card charges that average $100 at consistent times over multiple days.
+                            </li>
+                            <li> 
+                                Other than the CEO Sten Sanjorge Jr., they are the only people making charges at this hotel.
+                            </li>
+                            <li> 
+                                The prices at this hotel seem to indicate $60 a night based on Sanjorge's one-night stay. From this data, it seems that the two people have a room at this hotel for the entire week prior to the kidnapping.
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='people'>  
+                        <div> People </div>
+                        <ul>
+                            <li> Brand Tempestad </li>
+                            <li> Isande Borrasca </li>
+                        </ul>
+                    </li>
+                    <li class='location'>  
+                        <div> Locations </div>
+                        Chostus Hotel
+                    </li>
+                    <li class='time'> 
+                        <div> Times </div>
+                        <ul>
+                            <li> Around 1PM on 1/8, 1/10, 1/14, 1/17. </li>
+                        </ul>
+                    </li>
+                    <li class='sig'> 
+                        <div> Significance </div>
+                        <ul>
+                            <li>
+                                They might have been setting something up at the hotel for the week prior to Sanjorge's arrival, given that they check out the day before he arrives.
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='confidence'> 
+                        <div> Confidence level </div>
+                        7/10: There is a very clear pattern that is unique to these people, and it is very suspicious that they were at the hotel for the entire week, just until Sanjorge checked in. However, they were not suspicious persons in A1.
+                    </li>
+                </ul>
+            </li>
         </ul>
     </section>
 
+    <footer>
+        Mia Collymore Abbas, Jiwon Choi, and Christie Chen.
+    </footer>
    
     <script src='main.js'></script>
 
