@@ -1,0 +1,192 @@
+:root{
+    --notice: #7c7661;
+    --header2: #70915b;
+    --header34: #99bd82;
+    --evidence: #ebe8dc;
+    --historical-evidence: #f8f6f2;
+    --navlink: #b8a6a6;
+    --navlinkhover: #998484;
+}
+
+*{
+    font-family: 'Karla', sans-serif;
+    font-weight: 300;
+}
+
+nav{
+    width: 20%;
+    margin-left:3%;
+    position: fixed;
+    height: 90vh;
+    overflow-y: scroll;
+    padding-bottom: 30px;
+}
+nav a{
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--navlink);
+    font-weight: 600;
+    font-size: 13px;
+}
+nav a:visited{
+    color: var(--navlink);
+}
+
+nav a:hover{
+    color: var(--navlinkhover);
+}
+
+nav a.second{
+    margin-left:20px;
+}
+
+section{
+    width: 80%;
+    margin-left: auto;
+    margin-right: 5%;
+    margin-bottom: 40px;
+}
+
+h1{
+    font-weight: 800;
+    margin-left: auto;
+    margin-right:5%;
+    width: 80%;
+}
+h2{
+    color: var(--header2);
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+h3{
+    color: var(--header34);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+h4{
+    color: var(--header34);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+h5{
+    color:var(--header34);
+    font-weight: 600;
+}
+
+b{
+    font-weight: 600;
+}
+.notice{
+    color: var(--notice);
+}
+
+p{
+    font-size: 13px;
+}
+
+li.event{
+    display: flex;
+    flex-direction: row;
+}
+ul{
+    padding-left: 0;
+}
+
+.event > div {
+    width: 33%;
+    display: flex;
+    column-gap: 5px;
+}
+
+.event > div *{
+    font-weight: 600;
+    word-break:normal;
+}
+.event {
+    margin-bottom:20px;
+    padding-bottom:13px;
+    border-bottom: 1px solid grey;
+}
+
+.evidence{
+    display: inline-block;
+    width: 62%;
+    vertical-align: top;
+    padding-left: 2%;
+}
+
+.evidence > li{
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: var(--evidence);
+    padding: 10px 20px 15px 20px;
+    font-size: 13px;
+}
+
+
+
+.event li {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.evidence > li > div{
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.evidence > li ul{
+    margin-top: 5px;
+}
+.evidence > li li {
+    padding: 0;
+    padding-left: 10px;
+}
+
+.a1 > div{
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.a1 li {
+    margin-top: 5px;
+}
+.evidence .a1{
+    background-color: var(--historical-evidence);
+    margin-top: 10px;
+    padding: 10px 17px;
+    border-radius: 10px;
+}
+
+.name{
+    font-weight: 500;
+    font-style: italic;
+}
+
+img{
+    width: 100%;
+    margin-top: 7px;
+    border-radius: 10px;
+}
+
+
+.people{
+    background-color: rgb(231, 228, 201) !important;
+}
+.location{
+    background-color: rgb(209, 192, 172) !important;
+}
+.time{
+    background-color: rgb(209, 192, 172) !important;
+}
+.sig{
+    background-color: rgb(196, 226, 230) !important;
+}
+.confidence{
+    background-color: rgb(228, 211, 238) !important;
+}
