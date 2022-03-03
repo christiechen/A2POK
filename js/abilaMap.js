@@ -45,7 +45,7 @@ AbilaMap.prototype.init = function () {
 
 
     var promises = []
-    promises.push(d3.json("data/Geospatial/Abila.json"))
+    promises.push(d3.json("../data/Geospatial/Abila.json"))
     myDataPromises = Promise.all(promises).then(function (my_data) {
 
         self.topo = my_data[0]
