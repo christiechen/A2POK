@@ -45,7 +45,7 @@ AbilaMap.prototype.init = function () {
 
 
     var promises = []
-    promises.push(d3.json("../data/Geospatial/Abila.json"))
+    promises.push(d3.json("data/Geospatial/Abila.json"))
     myDataPromises = Promise.all(promises).then(function (my_data) {
 
         self.topo = my_data[0]
@@ -245,7 +245,6 @@ at ${d.Timestamp.getHours() < 10 ? '0' + d.Timestamp.getHours() : d.Timestamp.ge
             $('#legend-people').empty();
             if(self.employmentTypeFilter===""){
                 for(let type of self.empTypes){
-                    console.log('hello')
                     $('#legend-people').append(`<li class='${type}'> ${type}</li>`)
                 }
                 let colors = ["#00a60e", "#e659ff", "#2ea1ff", "#ff892e", "#ff2e2e",
@@ -352,7 +351,6 @@ at ${d.Timestamp.getHours() < 10 ? '0' + d.Timestamp.getHours() : d.Timestamp.ge
 
     if(self.employmentTypeFilter===""){
         for(let type of self.empTypes){
-            console.log('hello')
             $('#legend-people').append(`<li class='${type}'> ${type}</li>`)
         }
         let colors = ["#00a60e", "#e659ff", "#2ea1ff", "#ff892e", "#ff2e2e",
